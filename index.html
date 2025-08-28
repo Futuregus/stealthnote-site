@@ -5,55 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StealthNote</title>
   <style>
+    /* ===== Body & Layout ===== */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
       color: #f0f0f0;
       margin: 0;
       padding: 2rem;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease-out;
+    }
+
     h1 {
       font-size: 3rem;
       margin-bottom: 0.2rem;
+      background: linear-gradient(90deg, #1e88e5, #00bcd4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     h2 {
       font-size: 2rem;
       margin-top: 2rem;
+      border-bottom: 2px solid #1e88e5;
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
+
     .subtitle {
       font-size: 1.25rem;
       color: #bbbbbb;
+      margin-bottom: 2rem;
     }
+
     ul {
       list-style: none;
       padding: 0;
     }
+
+    .features li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
     .features li::before {
-      content: "🔹 ";
-      margin-right: 0.5rem;
+      content: "🔹";
+      position: absolute;
+      left: 0;
+      top: 0;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
+
+    .features li:hover {
+      transform: translateX(8px);
+      color: #1e88e5;
     }
-    .features {
-      margin-top: 1rem;
-    }
+
     .download-button {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.75rem 1.5rem;
-      background-color: #1e88e5;
+      background: linear-gradient(45deg, #1e88e5, #00bcd4);
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
+
     .download-button:hover {
-      background-color: #1565c0;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
+
+    /* ===== Animations ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 <body>
@@ -63,21 +106,19 @@
 
     <h2>What is StealthNote?</h2>
     <p>
-      StealthNote is a lightweight, secure notepad application that encrypts your notes with strong encryption—
-      perfect for storing passwords, confidential information, or sharing secret messages safely.
+      StealthNote is a lightweight, secure notepad application that encrypts your notes with strong encryption—perfect for storing passwords, confidential information, or sending secret messages safely.
     </p>
 
     <h2>✨ Features</h2>
     <ul class="features">
-      <li> 💾 **Encrypted Save/Load** – Secure your notes with password-based encryption.</li>
-      <li>🌙 **Themes** – Choose from pre-made themes ([or make your own](https://docs.google.com/document/d/1Spz25jdI6UEGjVUOZ90Up5fQTI3quWvMlBbPqFUWrQs/edit?usp=sharing)).</li>
-      <li>🌓 Choose from a list of themes</li>
-      <li>🔠 **Adjustable Font Size/Font** – Set the font and size to make it feel your own.</li>
-      <li>📂 **Default Save/Open Folder** – Set your favorite folder as the starting point.</li>
-      <li>🔧 **Persistent Settings** – Remembers your preferences every time you open it.</li>
-      <li>🛡️ **Password Strength Check** – Warns you if your password is weak.</li>
-      <li>🕵️‍**StealthMode** - Quickly hides your notes and opens the calculator app</li>
-      <li>🌐 **Update Checker** – Automatically checks GitHub to let you know if a newer version is out (the only part that uses the internet).</li>
+      <li>💾 <strong>Encrypted Save/Load</strong> – Secure your notes with password-based encryption.</li>
+      <li>🌙 <strong>Themes</strong> – Choose from pre-made themes or make your own <a href="https://docs.google.com/document/d/1Spz25jdI6UEGjVUOZ90Up5fQTI3quWvMlBbPqFUWrQs/edit?usp=sharing" target="_blank">here</a>.</li>
+      <li>🔠 <strong>Adjustable Font</strong> – Set the font and size to make StealthNote your own.</li>
+      <li>📂 <strong>Default Folder</strong> – Set your favorite folder as the starting point.</li>
+      <li>🔧 <strong>Persistent Settings</strong> – Remembers your preferences every time you open it.</li>
+      <li>🛡️ <strong>Password Strength Check</strong> – Warns you if your password is weak.</li>
+      <li>🕵️ <strong>StealthMode</strong> – Quickly hides notes and opens the calculator app.</li>
+      <li>🌐 <strong>Update Checker</strong> – Automatically checks GitHub for new versions.</li>
       <li>📖 Open source</li>
     </ul>
 
@@ -87,3 +128,4 @@
   </div>
 </body>
 </html>
+
