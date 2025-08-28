@@ -15,7 +15,10 @@
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* ===== Floating Particles ===== */
@@ -39,6 +42,15 @@
       100% { background-position: 100px 100px, 75px 75px; }
     }
 
+    /* ===== Top Section ===== */
+    .top-section {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== Container ===== */
     .container {
       position: relative;
       z-index: 1;
@@ -74,6 +86,13 @@
       }
     }
 
+    /* ===== Subtitle ===== */
+    .subtitle {
+      font-size: 1.25rem;
+      color: #bbbbbb;
+      margin-top: 0.5rem;
+    }
+
     /* ===== Headings ===== */
     h2 {
       font-size: 2rem;
@@ -81,12 +100,6 @@
       border-bottom: 2px solid #1e88e5;
       display: inline-block;
       padding-bottom: 0.3rem;
-    }
-
-    .subtitle {
-      font-size: 1.25rem;
-      color: #bbbbbb;
-      margin-bottom: 2rem;
     }
 
     ul {
@@ -137,14 +150,16 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- Centered Top Section -->
+  <div class="top-section">
     <h1>Stealth<span class="italic-note">Note</span></h1>
     <p class="subtitle">Keep your secrets secret</p>
+  </div>
 
+  <div class="container">
     <h2>What is StealthNote?</h2>
     <p>
       Stealth<span class="italic-note">Note</span> is a lightweight, secure notepad application that encrypts your notes with strong encryption—perfect for storing passwords, confidential information, or sending secret messages safely.
@@ -154,7 +169,7 @@
     <ul class="features">
       <li>💾 <strong>Encrypted Save/Load</strong> – Secure your notes with password-based encryption.</li>
       <li>🌙 <strong>Themes</strong> – Choose from pre-made themes or make your own <a href="https://docs.google.com/document/d/1Spz25jdI6UEGjVUOZ90Up5fQTI3quWvMlBbPqFUWrQs/edit?usp=sharing" target="_blank">here</a>.</li>
-      <li>🔠 <strong>Adjustable Font</strong> – Set the font and size to feel your own.</li>
+      <li>🔠 <strong>Adjustable Font</strong> – Set the font and size to make it your own.</li>
       <li>📂 <strong>Default Folder</strong> – Set your favorite folder as the starting point.</li>
       <li>🔧 <strong>Persistent Settings</strong> – Remembers your preferences every time you open it.</li>
       <li>🛡️ <strong>Password Strength Check</strong> – Warns you if your password is weak.</li>
@@ -169,6 +184,7 @@
   </div>
 </body>
 </html>
+
 
 
 
